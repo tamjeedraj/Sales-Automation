@@ -15,7 +15,7 @@ export default function LeadsDashboard() {
   useEffect(() => {
     setLoading(true);
     // axios.get(`http://127.0.0.1:8000/api/leads?city=${encodeURIComponent(selectedCity)}`)
-    axios.get(`${import.meta.env.VITE_API_URL}/api/leads`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/leads?city=${encodeURIComponent(selectedCity)}`)
       .then(res => {
         if (res.data && res.data.leads) {
           setLeads(res.data.leads);
